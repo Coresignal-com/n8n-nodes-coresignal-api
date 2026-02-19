@@ -1,0 +1,49 @@
+{
+  "name": "n8n-nodes-coresignal-api",
+  "version": "1.0.0",
+  "description": "n8n community node for Coresignal API - access company, employee, job, and post data",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "coresignal"
+  ],
+  "license": "MIT",
+  "homepage": "https://coresignal.com",
+  "author": {
+    "name": "Coresignal",
+    "email": "marketing@coresignal.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Coresignal-com/n8n-nodes-coresignal-api.git"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lintfix": "n8n-node lint --fix",
+    "prepublishOnly": "n8n-node prerelease"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/CoresignalApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Coresignal/Coresignal.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "*",
+    "eslint": "9.32.0",
+    "prettier": "3.6.2",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
