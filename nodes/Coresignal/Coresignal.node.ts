@@ -39,26 +39,22 @@ export class Coresignal implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'employee data',
+						name: 'Employee Data',
 						value: 'employee',
 						description: 'Access employee data and profiles',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'company data',
+						name: 'Company Data',
 						value: 'company',
 						description: 'Access company data and profiles',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'job data',
+						name: 'Job Data',
 						value: 'job',
 						description: 'Access jobs data',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'employee posts',
+						name: 'Employee Posts',
 						value: 'post',
 						description: 'Access employee posts data',
 					},
@@ -81,29 +77,25 @@ export class Coresignal implements INodeType {
 				},
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'collect by ID',
+						name: 'Collect by ID',
 						value: 'collect_by_id',
 						description: 'Retrieve a full company profile using a company ID',
 						action: 'Retrieve a full company profile using a company ID',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'collect by slug',
+						name: 'Collect by Slug',
 						value: 'collect_by_slug',
 						description: 'Retrieve a full company profile using a URL slug',
 						action: 'Retrieve a full company profile using a URL slug',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'enrich by website',
+						name: 'Enrich by Website',
 						value: 'enrich',
 						description: 'Enrich company data using a website URL',
 						action: 'Enrich company data using a website URL',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'search with Elasticsearch DSL',
+						name: 'Search with Elasticsearch DSL',
 						value: 'search_es_dsl',
 						description: 'Search companies using an Elasticsearch DSL query',
 						action: 'Search companies using an elasticsearch dsl query',
@@ -125,22 +117,19 @@ export class Coresignal implements INodeType {
 				},
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'collect by ID',
+						name: 'Collect by ID',
 						value: 'collect_by_id',
 						description: 'Retrieve a full employee profile using an employee ID',
 						action: 'Retrieve a full employee profile using an employee ID',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'collect by slug',
+						name: 'Collect by Slug',
 						value: 'collect_by_slug',
 						description: 'Retrieve a full employee profile using a URL slug',
 						action: 'Retrieve a full employee profile using a URL slug',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'search with Elasticsearch DSL',
+						name: 'Search with Elasticsearch DSL',
 						value: 'search_es_dsl',
 						description: 'Search employees using an Elasticsearch DSL query',
 						action: 'Search employees using an elasticsearch dsl query',
@@ -162,15 +151,13 @@ export class Coresignal implements INodeType {
 				},
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'collect by ID',
+						name: 'Collect by ID',
 						value: 'collect_by_id',
 						description: 'Retrieve a full job posting using a job ID',
 						action: 'Retrieve a full job posting using a job ID',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'search with Elasticsearch DSL',
+						name: 'Search with Elasticsearch DSL',
 						value: 'search_es_dsl',
 						description: 'Search jobs using an Elasticsearch DSL query',
 						action: 'Search jobs using an elasticsearch dsl query',
@@ -192,15 +179,13 @@ export class Coresignal implements INodeType {
 				},
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'collect by ID',
+						name: 'Collect by ID',
 						value: 'collect_by_id',
 						description: 'Retrieve a full employee post using a post ID',
 						action: 'Retrieve a full employee post using a post ID',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-						name: 'search with Elasticsearch DSL',
+						name: 'Search with Elasticsearch DSL',
 						value: 'search_es_dsl',
 						description: 'Search employee posts using an Elasticsearch DSL query',
 						action: 'Search employee posts using an elasticsearch dsl query',
@@ -261,8 +246,7 @@ export class Coresignal implements INodeType {
 
 			// ID Parameter - Post
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Employee post ID',
+				displayName: 'Employee Post ID',
 				name: 'postId',
 				type: 'string',
 				required: true,
@@ -278,8 +262,7 @@ export class Coresignal implements INodeType {
 
 			// Shorthand Name Parameter - Employee
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'URL slug',
+				displayName: 'URL Slug',
 				name: 'slug',
 				type: 'string',
 				required: true,
@@ -296,8 +279,7 @@ export class Coresignal implements INodeType {
 
 			// Shorthand Name Parameter - Company
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'URL slug',
+				displayName: 'URL Slug',
 				name: 'slug',
 				type: 'string',
 				required: true,
@@ -331,8 +313,7 @@ export class Coresignal implements INodeType {
 
 			// Fields Parameter - Employee
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Data fields (optional)',
+				displayName: 'Data Fields (Optional)',
 				name: 'fields',
 				type: 'string',
 				displayOptions: {
@@ -349,8 +330,7 @@ export class Coresignal implements INodeType {
 
 			// Fields Parameter - Company
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Data fields (optional)',
+				displayName: 'Data Fields (Optional)',
 				name: 'fields',
 				type: 'string',
 				displayOptions: {
@@ -367,8 +347,7 @@ export class Coresignal implements INodeType {
 
 			// Fields Parameter - Jobs
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Data fields (optional)',
+				displayName: 'Data Fields (Optional)',
 				name: 'fields',
 				type: 'string',
 				displayOptions: {
@@ -385,8 +364,7 @@ export class Coresignal implements INodeType {
 
 			// Fields Parameter - Posts
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Data fields (optional)',
+				displayName: 'Data Fields (Optional)',
 				name: 'fields',
 				type: 'string',
 				displayOptions: {
@@ -403,8 +381,7 @@ export class Coresignal implements INodeType {
 
 			// Elasticsearch DSL Query - Employee
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Elasticsearch DSL query',
+				displayName: 'Elasticsearch DSL Query',
 				name: 'esQuery',
 				type: 'json',
 				required: true,
@@ -421,8 +398,7 @@ export class Coresignal implements INodeType {
 
 			// Elasticsearch DSL Query - Company
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Elasticsearch DSL query',
+				displayName: 'Elasticsearch DSL Query',
 				name: 'esQuery',
 				type: 'json',
 				required: true,
@@ -439,8 +415,7 @@ export class Coresignal implements INodeType {
 
 			// Elasticsearch DSL Query - Job
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Elasticsearch DSL query',
+				displayName: 'Elasticsearch DSL Query',
 				name: 'esQuery',
 				type: 'json',
 				required: true,
@@ -457,8 +432,7 @@ export class Coresignal implements INodeType {
 
 			// Elasticsearch DSL Query - Post
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Elasticsearch DSL query',
+				displayName: 'Elasticsearch DSL Query',
 				name: 'esQuery',
 				type: 'json',
 				required: true,
@@ -474,8 +448,7 @@ export class Coresignal implements INodeType {
 
 			// Preview Mode (not available for posts)
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Preview mode',
+				displayName: 'Preview Mode',
 				name: 'preview',
 				type: 'boolean',
 				default: false,
