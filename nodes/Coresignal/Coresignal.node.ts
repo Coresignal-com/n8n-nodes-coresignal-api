@@ -584,7 +584,7 @@ export class Coresignal implements INodeType {
 			} catch (error) {
 				if (this.continueOnFail()) {
 					const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-					returnData.push({ json: { error: errorMessage } });
+					returnData.push({ json: { error: errorMessage }, pairedItem: { item: i } });
 					continue;
 				}
 				throw new NodeApiError(this.getNode(), error as unknown as JsonObject, { itemIndex: i });
