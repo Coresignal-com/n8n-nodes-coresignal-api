@@ -269,7 +269,7 @@ export class Coresignal implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['employee'],
-						operation: ['get_by_id'],
+						operation: ['get_by_slug'],
 					},
 				},
 				default: '',
@@ -286,7 +286,7 @@ export class Coresignal implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['company'],
-						operation: ['get_by_id'],
+						operation: ['get_by_slug'],
 					},
 				},
 				default: '',
