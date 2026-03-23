@@ -39,22 +39,22 @@ export class Coresignal implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Employee Data',
+						name: 'Employee',
 						value: 'employee',
 						description: 'Access employee data and profiles',
 					},
 					{
-						name: 'Company Data',
+						name: 'Company',
 						value: 'company',
 						description: 'Access company data and profiles',
 					},
 					{
-						name: 'Job Data',
+						name: 'Job',
 						value: 'job',
 						description: 'Access jobs data',
 					},
 					{
-						name: 'Employee Posts',
+						name: 'Employee Post',
 						value: 'post',
 						description: 'Access employee posts data',
 					},
