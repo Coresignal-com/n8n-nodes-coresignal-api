@@ -273,7 +273,7 @@ export class Coresignal implements INodeType {
 					},
 				},
 				default: '',
-				placeholder: 'e.g., john-smith',
+				placeholder: 'e.g. john-smith',
 				description: 'The slug to retrieve data for',
 			},
 
@@ -290,7 +290,7 @@ export class Coresignal implements INodeType {
 					},
 				},
 				default: '',
-				placeholder: 'e.g., microsoft',
+				placeholder: 'e.g. microsoft',
 				description: 'The slug to retrieve data for',
 			},
 
@@ -307,7 +307,7 @@ export class Coresignal implements INodeType {
 					},
 				},
 				default: '',
-				placeholder: 'e.g., https://example.com',
+				placeholder: 'e.g. https://example.com',
 				description: 'The company website URL to enrich data for',
 			},
 
@@ -324,7 +324,7 @@ export class Coresignal implements INodeType {
 				},
 				default: '',
 				// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
-				placeholder: 'e.g., id,full_name,headline',
+				placeholder: 'e.g. id,full_name,headline',
 				description: 'Comma-separated list of fields to return (leave empty for all fields)',
 			},
 
@@ -341,7 +341,7 @@ export class Coresignal implements INodeType {
 				},
 				default: '',
 				// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
-				placeholder: 'e.g., id,company_name,website',
+				placeholder: 'e.g. id,company_name,website',
 				description: 'Comma-separated list of fields to return (leave empty for all fields)',
 			},
 
@@ -358,7 +358,7 @@ export class Coresignal implements INodeType {
 				},
 				default: '',
 				// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
-				placeholder: 'e.g., id,title,company_name',
+				placeholder: 'e.g. id,title,company_name',
 				description: 'Comma-separated list of fields to return (leave empty for all fields)',
 			},
 
@@ -375,7 +375,7 @@ export class Coresignal implements INodeType {
 				},
 				default: '',
 				// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
-				placeholder: 'e.g., id,url,author_name',
+				placeholder: 'e.g. id,url,author_name',
 				description: 'Comma-separated list of fields to return (leave empty for all fields)',
 			},
 
