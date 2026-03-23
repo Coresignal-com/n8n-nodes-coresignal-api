@@ -16,7 +16,7 @@ export class Coresignal implements INodeType {
 		icon: 'file:logo.svg',
 		group: ['transform'],
 		version: 1,
-		subtitle: '={{$parameter["action"] + " - " + $parameter["category"] + " (" + $parameter["dataset"] + ")"}}',
+		subtitle: '={{$parameter["operation"] + " - " + $parameter["resource"] + " (" + $parameter["dataset"] + ")"}}',
 		description: 'Interact with Coresignal API for company, employee, job, and post data',
 		documentationUrl: 'https://docs.coresignal.com/?utm_source=n8n&utm_medium=referral',
 		defaults: {
@@ -31,10 +31,10 @@ export class Coresignal implements INodeType {
 			},
 		],
 		properties: [
-			// Category Selection
+			// Resource Selection
 			{
-				displayName: 'Category',
-				name: 'category',
+				displayName: 'Resource',
+				name: 'resource',
 				type: 'options',
 				noDataExpression: true,
 				options: [
@@ -62,17 +62,17 @@ export class Coresignal implements INodeType {
 				default: 'employee',
 			},
 
-			// ============ METHOD SELECTIONS ============
+			// ============ OPERATION SELECTIONS ============
 
-			// Method - Company
+			// Operation - Company
 			{
-				displayName: 'Action',
-				name: 'action',
+				displayName: 'Operation',
+				name: 'operation',
 				type: 'options',
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						category: ['company'],
+						resource: ['company'],
 					},
 				},
 				options: [
@@ -104,15 +104,15 @@ export class Coresignal implements INodeType {
 				default: 'collect_by_id',
 			},
 
-			// Method - Employee
+			// Operation - Employee
 			{
-				displayName: 'Action',
-				name: 'action',
+				displayName: 'Operation',
+				name: 'operation',
 				type: 'options',
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						category: ['employee'],
+						resource: ['employee'],
 					},
 				},
 				options: [
@@ -138,15 +138,15 @@ export class Coresignal implements INodeType {
 				default: 'collect_by_id',
 			},
 
-			// Method - Jobs
+			// Operation - Jobs
 			{
-				displayName: 'Action',
-				name: 'action',
+				displayName: 'Operation',
+				name: 'operation',
 				type: 'options',
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						category: ['job'],
+						resource: ['job'],
 					},
 				},
 				options: [
@@ -166,15 +166,15 @@ export class Coresignal implements INodeType {
 				default: 'collect_by_id',
 			},
 
-			// Method - Posts
+			// Operation - Posts
 			{
-				displayName: 'Action',
-				name: 'action',
+				displayName: 'Operation',
+				name: 'operation',
 				type: 'options',
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						category: ['post'],
+						resource: ['post'],
 					},
 				},
 				options: [
@@ -204,8 +204,8 @@ export class Coresignal implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						category: ['company'],
-						action: ['collect_by_id'],
+						resource: ['company'],
+						operation: ['collect_by_id'],
 					},
 				},
 				default: '',
@@ -220,8 +220,8 @@ export class Coresignal implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						category: ['employee'],
-						action: ['collect_by_id'],
+						resource: ['employee'],
+						operation: ['collect_by_id'],
 					},
 				},
 				default: '',
@@ -236,8 +236,8 @@ export class Coresignal implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						category: ['job'],
-						action: ['collect_by_id'],
+						resource: ['job'],
+						operation: ['collect_by_id'],
 					},
 				},
 				default: '',
@@ -252,8 +252,8 @@ export class Coresignal implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						category: ['post'],
-						action: ['collect_by_id'],
+						resource: ['post'],
+						operation: ['collect_by_id'],
 					},
 				},
 				default: '',
@@ -268,8 +268,8 @@ export class Coresignal implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						category: ['employee'],
-						action: ['collect_by_slug'],
+						resource: ['employee'],
+						operation: ['collect_by_slug'],
 					},
 				},
 				default: '',
@@ -285,8 +285,8 @@ export class Coresignal implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						category: ['company'],
-						action: ['collect_by_slug'],
+						resource: ['company'],
+						operation: ['collect_by_slug'],
 					},
 				},
 				default: '',
@@ -302,8 +302,8 @@ export class Coresignal implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						category: ['company'],
-						action: ['enrich'],
+						resource: ['company'],
+						operation: ['enrich'],
 					},
 				},
 				default: '',
@@ -318,8 +318,8 @@ export class Coresignal implements INodeType {
 				type: 'string',
 				displayOptions: {
 					show: {
-						category: ['employee'],
-						action: ['collect_by_id', 'collect_by_slug'],
+						resource: ['employee'],
+						operation: ['collect_by_id', 'collect_by_slug'],
 					},
 				},
 				default: '',
@@ -335,8 +335,8 @@ export class Coresignal implements INodeType {
 				type: 'string',
 				displayOptions: {
 					show: {
-						category: ['company'],
-						action: ['collect_by_id', 'collect_by_slug', 'enrich'],
+						resource: ['company'],
+						operation: ['collect_by_id', 'collect_by_slug', 'enrich'],
 					},
 				},
 				default: '',
@@ -352,8 +352,8 @@ export class Coresignal implements INodeType {
 				type: 'string',
 				displayOptions: {
 					show: {
-						category: ['job'],
-						action: ['collect_by_id'],
+						resource: ['job'],
+						operation: ['collect_by_id'],
 					},
 				},
 				default: '',
@@ -369,8 +369,8 @@ export class Coresignal implements INodeType {
 				type: 'string',
 				displayOptions: {
 					show: {
-						category: ['post'],
-						action: ['collect_by_id'],
+						resource: ['post'],
+						operation: ['collect_by_id'],
 					},
 				},
 				default: '',
@@ -387,8 +387,8 @@ export class Coresignal implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						category: ['employee'],
-						action: ['search_es_dsl'],
+						resource: ['employee'],
+						operation: ['search_es_dsl'],
 					},
 				},
 				default: '{"query": {"match_all": {}}}',
@@ -404,8 +404,8 @@ export class Coresignal implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						category: ['company'],
-						action: ['search_es_dsl'],
+						resource: ['company'],
+						operation: ['search_es_dsl'],
 					},
 				},
 				default: '{"query": {"match_all": {}}}',
@@ -421,8 +421,8 @@ export class Coresignal implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						category: ['job'],
-						action: ['search_es_dsl'],
+						resource: ['job'],
+						operation: ['search_es_dsl'],
 					},
 				},
 				default: '{"query": {"match_all": {}}}',
@@ -438,8 +438,8 @@ export class Coresignal implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						category: ['post'],
-						action: ['search_es_dsl'],
+						resource: ['post'],
+						operation: ['search_es_dsl'],
 					},
 				},
 				default: '{"query": {"match_all": {}}}',
@@ -454,8 +454,8 @@ export class Coresignal implements INodeType {
 				default: false,
 				displayOptions: {
 					show: {
-						category: ['employee', 'company', 'job'],
-						action: ['search_es_dsl'],
+						resource: ['employee', 'company', 'job'],
+						operation: ['search_es_dsl'],
 					},
 				},
 				description: 'Whether to use preview endpoint (returns up to 20 results with essential data)',
@@ -472,9 +472,9 @@ export class Coresignal implements INodeType {
 
 		for (let i = 0; i < items.length; i++) {
 			try {
-				const category = this.getNodeParameter('category', i) as string;
+				const resource = this.getNodeParameter('resource', i) as string;
 				const dataset = 'multi_source'; // Always use multi_source
-				const action = this.getNodeParameter('action', i) as string;
+				const operation = this.getNodeParameter('operation', i) as string;
 
 				let url = '';
 				let httpMethod: 'GET' | 'POST' = 'GET';
@@ -483,17 +483,17 @@ export class Coresignal implements INodeType {
 
 				// Build the data source string (e.g., "company_multi_source", "employee_multi_source")
 				// Posts use a different endpoint structure
-				const dataSource = category === 'post' ? 'employee_post' : `${category}_${dataset}`;
+				const dataSource = resource === 'post' ? 'employee_post' : `${resource}_${dataset}`;
 				const baseEndpoint = `/cdapi/v2/${dataSource}`;
 
-				switch (action) {
+				switch (operation) {
 					case 'collect_by_id': {
 						let id: string;
-						if (category === 'company') {
+						if (resource === 'company') {
 							id = this.getNodeParameter('companyId', i) as string;
-						} else if (category === 'employee') {
+						} else if (resource === 'employee') {
 							id = this.getNodeParameter('employeeId', i) as string;
-						} else if (category === 'job') {
+						} else if (resource === 'job') {
 							id = this.getNodeParameter('jobId', i) as string;
 						} else {
 							id = this.getNodeParameter('postId', i) as string;
