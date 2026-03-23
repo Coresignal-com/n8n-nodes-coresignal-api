@@ -77,14 +77,14 @@ export class Coresignal implements INodeType {
 				},
 				options: [
 					{
-						name: 'Collect by ID',
-						value: 'collect_by_id',
+						name: 'Get by ID',
+						value: 'get_by_id',
 						description: 'Retrieve a full company profile using a company ID',
 						action: 'Retrieve a full company profile using a company ID',
 					},
 					{
-						name: 'Collect by Slug',
-						value: 'collect_by_slug',
+						name: 'Get by Slug',
+						value: 'get_by_slug',
 						description: 'Retrieve a full company profile using a URL slug',
 						action: 'Retrieve a full company profile using a URL slug',
 					},
@@ -101,7 +101,7 @@ export class Coresignal implements INodeType {
 						action: 'Search companies using an elasticsearch dsl query',
 					},
 				],
-				default: 'collect_by_id',
+				default: 'get_by_id',
 			},
 
 			// Operation - Employee
@@ -117,14 +117,14 @@ export class Coresignal implements INodeType {
 				},
 				options: [
 					{
-						name: 'Collect by ID',
-						value: 'collect_by_id',
+						name: 'Get by ID',
+						value: 'get_by_id',
 						description: 'Retrieve a full employee profile using an employee ID',
 						action: 'Retrieve a full employee profile using an employee ID',
 					},
 					{
-						name: 'Collect by Slug',
-						value: 'collect_by_slug',
+						name: 'Get by Slug',
+						value: 'get_by_slug',
 						description: 'Retrieve a full employee profile using a URL slug',
 						action: 'Retrieve a full employee profile using a URL slug',
 					},
@@ -135,7 +135,7 @@ export class Coresignal implements INodeType {
 						action: 'Search employees using an elasticsearch dsl query',
 					},
 				],
-				default: 'collect_by_id',
+				default: 'get_by_id',
 			},
 
 			// Operation - Jobs
@@ -151,8 +151,8 @@ export class Coresignal implements INodeType {
 				},
 				options: [
 					{
-						name: 'Collect by ID',
-						value: 'collect_by_id',
+						name: 'Get by ID',
+						value: 'get_by_id',
 						description: 'Retrieve a full job posting using a job ID',
 						action: 'Retrieve a full job posting using a job ID',
 					},
@@ -163,7 +163,7 @@ export class Coresignal implements INodeType {
 						action: 'Search jobs using an elasticsearch dsl query',
 					},
 				],
-				default: 'collect_by_id',
+				default: 'get_by_id',
 			},
 
 			// Operation - Posts
@@ -179,8 +179,8 @@ export class Coresignal implements INodeType {
 				},
 				options: [
 					{
-						name: 'Collect by ID',
-						value: 'collect_by_id',
+						name: 'Get by ID',
+						value: 'get_by_id',
 						description: 'Retrieve a full employee post using a post ID',
 						action: 'Retrieve a full employee post using a post ID',
 					},
@@ -191,7 +191,7 @@ export class Coresignal implements INodeType {
 						action: 'Search employee posts using an elasticsearch dsl query',
 					},
 				],
-				default: 'collect_by_id',
+				default: 'get_by_id',
 			},
 
 			// ============ INPUT DATA ============
@@ -205,7 +205,7 @@ export class Coresignal implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['company'],
-						operation: ['collect_by_id'],
+						operation: ['get_by_id'],
 					},
 				},
 				default: '',
@@ -221,7 +221,7 @@ export class Coresignal implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['employee'],
-						operation: ['collect_by_id'],
+						operation: ['get_by_id'],
 					},
 				},
 				default: '',
@@ -237,7 +237,7 @@ export class Coresignal implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['job'],
-						operation: ['collect_by_id'],
+						operation: ['get_by_id'],
 					},
 				},
 				default: '',
@@ -253,7 +253,7 @@ export class Coresignal implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['post'],
-						operation: ['collect_by_id'],
+						operation: ['get_by_id'],
 					},
 				},
 				default: '',
@@ -269,7 +269,7 @@ export class Coresignal implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['employee'],
-						operation: ['collect_by_slug'],
+						operation: ['get_by_id'],
 					},
 				},
 				default: '',
@@ -286,7 +286,7 @@ export class Coresignal implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['company'],
-						operation: ['collect_by_slug'],
+						operation: ['get_by_id'],
 					},
 				},
 				default: '',
@@ -319,7 +319,7 @@ export class Coresignal implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['employee'],
-						operation: ['collect_by_id', 'collect_by_slug'],
+						operation: ['get_by_id', 'get_by_slug'],
 					},
 				},
 				default: '',
@@ -336,7 +336,7 @@ export class Coresignal implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['company'],
-						operation: ['collect_by_id', 'collect_by_slug', 'enrich'],
+						operation: ['get_by_id', 'get_by_slug', 'enrich'],
 					},
 				},
 				default: '',
@@ -353,7 +353,7 @@ export class Coresignal implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['job'],
-						operation: ['collect_by_id'],
+						operation: ['get_by_id'],
 					},
 				},
 				default: '',
@@ -370,7 +370,7 @@ export class Coresignal implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['post'],
-						operation: ['collect_by_id'],
+						operation: ['get_by_id'],
 					},
 				},
 				default: '',
@@ -487,7 +487,7 @@ export class Coresignal implements INodeType {
 				const baseEndpoint = `/cdapi/v2/${dataSource}`;
 
 				switch (operation) {
-					case 'collect_by_id': {
+					case 'get_by_id': {
 						let id: string;
 						if (resource === 'company') {
 							id = this.getNodeParameter('companyId', i) as string;
@@ -508,7 +508,7 @@ export class Coresignal implements INodeType {
 						break;
 					}
 
-					case 'collect_by_slug': {
+					case 'get_by_slug': {
 						const slug = this.getNodeParameter('slug', i) as string;
 						url = `${baseEndpoint}/collect/${encodeURIComponent(slug)}`;
 						httpMethod = 'GET';
