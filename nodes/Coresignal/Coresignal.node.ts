@@ -16,7 +16,7 @@ export class Coresignal implements INodeType {
 		icon: 'file:logo.svg',
 		group: ['transform'],
 		version: 1,
-		subtitle: '={{$parameter["operation"] + " - " + $parameter["resource"] + " (" + $parameter["dataset"] + ")"}}',
+		subtitle: '={{$parameter["operation"] + " - " + $parameter["resource"]}}',
 		description: 'Interact with Coresignal API for company, employee, job, and post data',
 		documentationUrl: 'https://docs.coresignal.com/?utm_source=n8n&utm_medium=referral',
 		defaults: {
