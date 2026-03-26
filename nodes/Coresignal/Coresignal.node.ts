@@ -6,6 +6,7 @@ import {
 	IDataObject,
 	IHttpRequestOptions,
 	NodeApiError,
+	NodeConnectionTypes,
 	JsonObject,
 } from 'n8n-workflow';
 
@@ -22,8 +23,8 @@ export class Coresignal implements INodeType {
 		defaults: {
 			name: 'Coresignal',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [NodeConnectionTypes.Main],
+		outputs: [NodeConnectionTypes.Main],
 		credentials: [
 			{
 				name: 'coresignalApi',
@@ -39,24 +40,24 @@ export class Coresignal implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Employee',
-						value: 'employee',
-						description: 'Access employee data and profiles',
-					},
-					{
 						name: 'Company',
 						value: 'company',
 						description: 'Access company data and profiles',
 					},
 					{
-						name: 'Job',
-						value: 'job',
-						description: 'Access jobs data',
+						name: 'Employee',
+						value: 'employee',
+						description: 'Access employee data and profiles',
 					},
 					{
 						name: 'Employee Post',
 						value: 'post',
 						description: 'Access employee posts data',
+					},
+					{
+						name: 'Job',
+						value: 'job',
+						description: 'Access jobs data',
 					},
 				],
 				default: 'employee',
@@ -77,6 +78,12 @@ export class Coresignal implements INodeType {
 				},
 				options: [
 					{
+						name: 'Enrich by Website',
+						value: 'enrich',
+						description: 'Enrich company data using a website URL',
+						action: 'Enrich company by website URL',
+					},
+					{
 						name: 'Get by ID',
 						value: 'get_by_id',
 						description: 'Retrieve a full company profile using a company ID',
@@ -87,12 +94,6 @@ export class Coresignal implements INodeType {
 						value: 'get_by_slug',
 						description: 'Retrieve a full company profile using a URL slug',
 						action: 'Get company by URL slug',
-					},
-					{
-						name: 'Enrich by Website',
-						value: 'enrich',
-						description: 'Enrich company data using a website URL',
-						action: 'Enrich company by website URL',
 					},
 					{
 						name: 'Search with Elasticsearch DSL',
@@ -323,8 +324,7 @@ export class Coresignal implements INodeType {
 					},
 				},
 				default: '',
-				// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
-				placeholder: 'e.g. id,full_name,headline',
+				placeholder: 'e.g. full_name,headline',
 				description: 'Comma-separated list of fields to return (leave empty for all fields)',
 			},
 
@@ -340,8 +340,7 @@ export class Coresignal implements INodeType {
 					},
 				},
 				default: '',
-				// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
-				placeholder: 'e.g. id,company_name,website',
+				placeholder: 'e.g. company_name,website',
 				description: 'Comma-separated list of fields to return (leave empty for all fields)',
 			},
 
@@ -357,8 +356,7 @@ export class Coresignal implements INodeType {
 					},
 				},
 				default: '',
-				// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
-				placeholder: 'e.g. id,title,company_name',
+				placeholder: 'e.g. title,company_name',
 				description: 'Comma-separated list of fields to return (leave empty for all fields)',
 			},
 
@@ -374,8 +372,7 @@ export class Coresignal implements INodeType {
 					},
 				},
 				default: '',
-				// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
-				placeholder: 'e.g. id,url,author_name',
+				placeholder: 'e.g. url,author_name',
 				description: 'Comma-separated list of fields to return (leave empty for all fields)',
 			},
 
